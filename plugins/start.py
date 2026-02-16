@@ -184,7 +184,7 @@ async def start_command(client: Bot, message: Message):
                 [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
                 [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
-                    InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟ •", url="https://t.me/DragonByte_Network")
+                    InlineKeyboardButton("• ɴᴇᴛᴡᴏʀᴋ •", url="https://t.me/DragonByte_Network")
                 ],
                 [InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")]
             ]
@@ -192,10 +192,7 @@ async def start_command(client: Bot, message: Message):
         
         # Improved start message with better formatting
         CUSTOM_START_MSG = f"""
-<b><blockquote expandable>✨ ʏᴜᴛᴀ ꜱʜᴀʀᴇ ʙᴏᴛ ✨</blockquote>
-
 ʜᴇʏ <a href='tg://user?id={user_id}'>{message.from_user.first_name}</a> 👋
-
 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴀɴɪᴍᴇ ꜱʜᴀʀɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ.
 
 ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇꜱꜱ ᴛᴡᴏ ᴇxᴄʟᴜꜱɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ:
@@ -204,7 +201,7 @@ async def start_command(client: Bot, message: Message):
 
 ᴜꜱᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴘʀᴇꜰᴇʀʀᴇᴅ ᴄʜᴀɴɴᴇʟ.
 
-ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>` 𝘍𝘭𝘦𝘹𝘺𝘺 𓄼🦅𓄹</a> | <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a>
+<blockquote>ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>` 𝘍𝘭𝘦𝘹𝘺𝘺 𓄼🦅𓄹</a></blockquote>
 </b>"""
         
         # Show waiting emoji and instantly delete it
