@@ -180,8 +180,7 @@ async def start_command(client: Bot, message: Message):
         # Improved inline buttons with better design
         inline_buttons = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
-                [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
+                [InlineKeyboardButton("• sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ •", url="https://t.me/YutaShareBot?start=LTEwMDMyMzA2MDcwNzg=")],
                 [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
                     InlineKeyboardButton("• ɴᴇᴛᴡᴏʀᴋ •", url="https://t.me/DragonByte_Network")
@@ -609,8 +608,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "channels":
         # Improved channels message with direct links
         CHANNELS_BUTTONS = InlineKeyboardMarkup([
-            [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
-            [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
+            [InlineKeyboardButton("• sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ •", url="https://t.me/YutaShareBot?start=LTEwMDMyMzA2MDcwNzg=")],
             [InlineKeyboardButton("• ʙᴀᴄᴋ •", callback_data="start")]
         ])
         
@@ -626,9 +624,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
         # Improved inline buttons
         inline_buttons = InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
-                [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
+            [           
+                [InlineKeyboardButton("• sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ •", url="https://t.me/YutaShareBot?start=LTEwMDMyMzA2MDcwNzg=")],
                 [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
                     InlineKeyboardButton("• ɴᴇᴛᴡᴏʀᴋ •", url="https://t.me/DragonByte_Network")
