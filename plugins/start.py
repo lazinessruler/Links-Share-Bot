@@ -634,15 +634,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
         # Improved inline buttons
         inline_buttons = InlineKeyboardMarkup(
-        [
-            InlineKeyboardButton(text="ᴡ", callback_data="none1"),
-            InlineKeyboardButton(text="ᴇ", callback_data="none2"),
-            InlineKeyboardButton(text="ʟ", callback_data="none3"),
-            InlineKeyboardButton(text="ᴄ", callback_data="none4"),
-            InlineKeyboardButton(text="ᴏ", callback_data="none5"),
-            InlineKeyboardButton(text="ᴍ", callback_data="none6"),
-            InlineKeyboardButton(text="ᴇ", callback_data="none7"),
-        ],
             [
                 [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
                 [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
