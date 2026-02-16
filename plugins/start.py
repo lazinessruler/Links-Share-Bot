@@ -193,15 +193,8 @@ async def start_command(client: Bot, message: Message):
         # Improved start message with better formatting
         CUSTOM_START_MSG = f"""
 ʜᴇʏ <a href='tg://user?id={user_id}'>{message.from_user.first_name}</a> 👋
-ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴀɴɪᴍᴇ ꜱʜᴀʀɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ.
-
-ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇꜱꜱ ᴛᴡᴏ ᴇxᴄʟᴜꜱɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ:
-» ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ
-» ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ
-
-ᴜꜱᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴘʀᴇꜰᴇʀʀᴇᴅ ᴄʜᴀɴɴᴇʟ.
-
-<blockquote>ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>` 𝘍𝘭𝘦𝘹𝘺𝘺 𓄼🦅𓄹</a></blockquote>
+ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴀᴅᴠᴀɴᴄᴇᴅ ʟɪɴᴋs sʜᴀʀɪɴɢ ʙᴏᴛ. ᴡɪᴛʜ ᴛʜɪs ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ sʜᴀʀᴇ ʟɪɴᴋs ᴀɴᴅ ᴋᴇᴇᴘ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟs sᴀғᴇ ғʀᴏᴍ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs. 
+<blockquote>‣ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>` 𝘍𝘭𝘦𝘹𝘺𝘺 𓄼🦅𓄹</a></blockquote>
 </b>"""
         
         # Show waiting emoji and instantly delete it
@@ -647,15 +640,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 <b><blockquote expandable>✨ ʏᴜᴛᴀ ꜱʜᴀʀᴇ ʙᴏᴛ ✨</blockquote>
 
 ʜᴇʏ <a href='tg://user?id={query.from_user.id}'>{query.from_user.first_name}</a> 👋
-ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴀɴɪᴍᴇ ꜱʜᴀʀɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ.
-
-ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇꜱꜱ ᴛᴡᴏ ᴇxᴄʟᴜꜱɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ:
-» ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ
-» ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ
-
-ᴜꜱᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴘʀᴇꜰᴇʀʀᴇᴅ ᴄʜᴀɴɴᴇʟ.
-
-<blockquote>ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a></blockquote>
+ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴀᴅᴠᴀɴᴄᴇᴅ ʟɪɴᴋs sʜᴀʀɪɴɢ ʙᴏᴛ. ᴡɪᴛʜ ᴛʜɪs ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ sʜᴀʀᴇ ʟɪɴᴋs ᴀɴᴅ ᴋᴇᴇᴘ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟs sᴀғᴇ ғʀᴏᴍ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs.
+<blockquote>‣ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a></blockquote>
 </b>"""
         
         try:
