@@ -599,16 +599,11 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         CUSTOM_ABOUT_TXT = f"""
 <b><blockquote expandable>ℹ️ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ</blockquote>
 
-<b>ʙᴏᴛ ɴᴀᴍᴇ:</b> <a href='https://t.me/YutaShareBot'>Yᴜᴛᴀ Sʜᴀʀᴇ Bᴏᴛ</a>
+<blockquote><b>ʙᴏᴛ ɴᴀᴍᴇ:</b> <a href='https://t.me/YutaShareBot'>Yᴜᴛᴀ !!</a>
 <b>ᴅᴇᴠᴇʟᴏᴘᴇʀ:</b> <a href='https://t.me/xFlexyy'>` 𝘍𝘭𝘦𝘹𝘺𝘺 𓄼🦅𓄹</a>
-<b>ᴄᴏᴍᴍᴜɴɪᴛʏ:</b> <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a>
+<b>ᴄᴏᴍᴍᴜɴɪᴛʏ:</b> <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a></blockquote>
 
-<b>ғᴇᴀᴛᴜʀᴇs:</b>
-• Exᴄʟᴜsɪᴠᴇ Aɴɪᴍᴇ Cʜᴀɴɴᴇʟ
-• Hᴇɴᴛᴀɪ Cᴏɴᴛᴇɴᴛ Aᴄᴄᴇss
-• Fᴀsᴛ & Rᴇʟɪᴀʙʟᴇ Sʜᴀʀɪɴɢ
-
-ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>@xFlexyy</a>
+<blockquote>ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>@xFlexyy</a></blockquote>
 </b>"""
         
         await query.edit_message_media(
@@ -665,7 +660,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 
 ᴜꜱᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴘʀᴇꜰᴇʀʀᴇᴅ ᴄʜᴀɴɴᴇʟ.
 
-ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>` 𝘍𝘭𝘦𝘹𝘺𝘺 𓄼🦅𓄹</a> | <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a>
+<blockquote>ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a></blockquote>
 </b>"""
         
         try:
