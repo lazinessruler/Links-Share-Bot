@@ -598,11 +598,9 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         # Improved about message with your branding
         CUSTOM_ABOUT_TXT = f"""
 <b><blockquote expandable>ℹ️ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ</blockquote>
-
 <blockquote><b>ʙᴏᴛ ɴᴀᴍᴇ:</b> <a href='https://t.me/YutaShareBot'>Yᴜᴛᴀ !!</a>
 <b>ᴅᴇᴠᴇʟᴏᴘᴇʀ:</b> <a href='https://t.me/xFlexyy'>` 𝘍𝘭𝘦𝘹𝘺𝘺 𓄼🦅𓄹</a>
 <b>ᴄᴏᴍᴍᴜɴɪᴛʏ:</b> <a href='https://t.me/DragonByte_Network'>𝖣𝗋𝖺𝗀𝗈𝗇𝖡𝗒𝗍𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄</a></blockquote>
-
 <blockquote>ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ <a href='https://t.me/xFlexyy'>@xFlexyy</a></blockquote>
 </b>"""
         
@@ -636,12 +634,21 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
         # Improved inline buttons
         inline_buttons = InlineKeyboardMarkup(
+        [
+            InlineKeyboardButton(text="ᴡ", callback_data="none1"),
+            InlineKeyboardButton(text="ᴇ", callback_data="none2"),
+            InlineKeyboardButton(text="ʟ", callback_data="none3"),
+            InlineKeyboardButton(text="ᴄ", callback_data="none4"),
+            InlineKeyboardButton(text="ᴏ", callback_data="none5"),
+            InlineKeyboardButton(text="ᴍ", callback_data="none6"),
+            InlineKeyboardButton(text="ᴇ", callback_data="none7"),
+        ],
             [
                 [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
                 [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
                 [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
-                    InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟ •", url="https://t.me/DragonByte_Network")
+                    InlineKeyboardButton("• ɴᴇᴛᴡᴏʀᴋ •", url="https://t.me/DragonByte_Network")
                 ],
                 [InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")]
             ]
