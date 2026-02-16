@@ -46,7 +46,7 @@ async def start_command(client: Bot, message: Message):
     if user_id in user_banned_until:
         if datetime.now() < user_banned_until[user_id]:
             return await message.reply_text(
-                "<b><blockquote expandable>⚠️ You are temporarily banned from using commands due to spamming. Try again later.</b>",
+                "<b><blockquote expandable>⚠️ ʏᴏᴜ ᴀʀᴇ ᴛᴇᴍᴘᴏʀᴀʀɪʟʏ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴄᴏᴍᴍᴀɴᴅs ᴅᴜᴇ ᴛᴏ sᴘᴀᴍᴍɪɴɢ. ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.</b>",
                 parse_mode=ParseMode.HTML
             )
             
@@ -66,7 +66,7 @@ async def start_command(client: Bot, message: Message):
             
             if not channel_id:
                 return await message.reply_text(
-                    "<b><blockquote expandable>❌ Invalid or expired invite link.</b>",
+                    "<b><blockquote expandable>❌ ɪɴᴠᴀʟɪᴅ ᴏʀ ᴇxᴘɪʀᴇᴅ ɪɴᴠɪᴛᴇ ʟɪɴᴋ.</b>",
                     parse_mode=ParseMode.HTML
                 )
 
@@ -75,7 +75,7 @@ async def start_command(client: Bot, message: Message):
             original_link = await get_original_link(channel_id)
             if original_link:
                 button = InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("🔗 • Proceed to Link • 🔗", url=original_link)]]
+                    [[InlineKeyboardButton("• ᴘʀᴏᴄᴇᴇᴅ ᴛᴏ ʟɪɴᴋ •", url=original_link)]]
                 )
                 return await message.reply_text(
                     "<b><blockquote expandable>✨ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ! ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ ✨</b>",
@@ -124,7 +124,7 @@ async def start_command(client: Bot, message: Message):
                     is_request_link = is_request
                     await save_invite_link(channel_id, invite_link, is_request_link)
 
-            button_text = "🔐 • ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ • 🔐" if is_request_link else "🚀 • ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ • 🚀"
+            button_text = "• ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ •" if is_request_link else "• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •"
             button = InlineKeyboardMarkup([[InlineKeyboardButton(button_text, url=invite_link)]])
 
             wait_msg = await message.reply_text(
@@ -141,7 +141,7 @@ async def start_command(client: Bot, message: Message):
             )
 
             note_msg = await message.reply_text(
-                "<b><i>📌 Note: If the link is expired, please click the post link again to get a new one.</i></b>",
+                "<b><i>📌 ɴᴏᴛᴇ: ɪғ ᴛʜᴇ ʟɪɴᴋ ɪs ᴇxᴘɪʀᴇᴅ, ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴛʜᴇ ᴘᴏsᴛ ʟɪɴᴋ ᴀɢᴀɪɴ ᴛᴏ ɢᴇᴛ ᴀ ɴᴇᴡ ᴏɴᴇ.</i></b>",
                 parse_mode=ParseMode.HTML
             )
 
@@ -152,7 +152,7 @@ async def start_command(client: Bot, message: Message):
 
         except Exception as e:
             await message.reply_text(
-                "<b><blockquote expandable>❌ Invalid or expired invite link.</b>",
+                "<b><blockquote expandable>❌ ɪɴᴠᴀʟɪᴅ ᴏʀ ᴇxᴘɪʀᴇᴅ ɪɴᴠɪᴛᴇ ʟɪɴᴋ.</b>",
                 parse_mode=ParseMode.HTML
             )
             print(f"Decoding error: {e}")
@@ -160,32 +160,39 @@ async def start_command(client: Bot, message: Message):
         # Random image selection
         start_image = random.choice(START_IMAGES)
         
-        # Custom inline buttons with your anime channels
+        # Custom inline buttons with your anime channels - NO EMOJIS, just dots
         inline_buttons = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("📺 • Anime Channel • 📺", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
-                [InlineKeyboardButton("🌙 • Hentai Channel Night Fall • 🌙", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
+                [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
+                [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
                 [
-                    InlineKeyboardButton("ℹ️ About", callback_data="about"),
-                    InlineKeyboardButton("📢 Channel", url="https://t.me/DragonByte_Network")
+                    InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
+                    InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟ •", url="https://t.me/DragonByte_Network")
                 ],
-                [InlineKeyboardButton("❌ Close", callback_data="close")]
+                [InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")]
             ]
         )
         
-        # Custom start message with your branding
+        # Cool start message with better UI
         START_MSG = f"""
-<b><blockquote expandable>✨ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʏᴜᴛᴀ ꜱʜᴀʀᴇ ʙᴏᴛ ✨</blockquote>
+╭━━━━━━━━━━━━━━━━━━╮
+┃   ✨ ʏᴜᴛᴀ ꜱʜᴀʀᴇ ʙᴏᴛ ✨
+╰━━━━━━━━━━━━━━━━━━╯
 
-ʜᴇʏ <a href='tg://user?id={user_id}'>{message.from_user.first_name}</a> 👋,
+ʜᴇʏ {message.from_user.first_name},
 
-ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴡɪᴛʜ ᴀᴄᴄᴇꜱꜱ ᴛᴏ ᴇxᴄʟᴜꜱɪᴠᴇ ᴀɴɪᴍᴇ ᴀɴᴅ ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟꜱ.
+ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴀɴɪᴍᴇ sʜᴀʀɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ.
 
-<b>🔰 ᴜꜱᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ:</b>
+» ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇss ᴛᴡᴏ ᴇxᴄʟᴜsɪᴠᴇ ᴄʜᴀɴɴᴇʟs:
+  • ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ
+  • ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ
 
-⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href='https://t.me/xFlexyy'>Fʟᴇxʏʏ</a>
-📢 ᴄᴏᴍᴍᴜɴɪᴛʏ: <a href='https://t.me/DragonByte_Network'>DʀᴀɢᴏɴBʏᴛᴇ Nᴇᴛᴡᴏʀᴋ</a>
-</b>"""
+» ᴜsᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴘʀᴇғᴇʀʀᴇᴅ ᴄʜᴀɴɴᴇʟ.
+
+──────────────────
+ᴘᴏᴡᴇʀᴇᴅ ʙʏ @xFlexyy
+ᴄᴏᴍᴍᴜɴɪᴛʏ @DragonByte_Network
+──────────────────"""
         
         # Show waiting emoji and instantly delete it
         wait_msg = await message.reply_text("⏳")
@@ -238,7 +245,7 @@ async def check_sub_callback(client: Bot, callback_query: CallbackQuery):
     
     if not fsub_channels:
         await callback_query.message.edit_text(
-            "<b>No FSub channels configured!</b>",
+            "<b>ɴᴏ ғsᴜʙ ᴄʜᴀɴɴᴇʟs ᴄᴏɴғɪɢᴜʀᴇᴅ!</b>",
             parse_mode=ParseMode.HTML
         )
         return
@@ -246,7 +253,7 @@ async def check_sub_callback(client: Bot, callback_query: CallbackQuery):
     is_subscribed, subscription_message, subscription_buttons = await check_subscription_status(client, user_id, fsub_channels)
     if is_subscribed:
         await callback_query.message.edit_text(
-            "<b>You are subscribed to all required channels! Use /start to proceed.</b>",
+            "<b>ʏᴏᴜ ᴀʀᴇ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴀʟʟ ʀᴇǫᴜɪʀᴇᴅ ᴄʜᴀɴɴᴇʟs! ᴜsᴇ /start ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ.</b>",
             parse_mode=ParseMode.HTML
         )
     else:
@@ -256,19 +263,19 @@ async def check_sub_callback(client: Bot, callback_query: CallbackQuery):
             parse_mode=ParseMode.HTML
         )
 
-WAIT_MSG = "<b>⏳ Processing...</b>"
+WAIT_MSG = "<b>⏳ ᴘʀᴏᴄᴇssɪɴɢ...</b>"
 
-REPLY_ERROR = """Usᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀs ᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ Tᴇʟᴇɢʀᴀᴍ ᴍᴇssᴀɢᴇ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ sᴘᴀᴄᴇs."""
+REPLY_ERROR = """ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀs ᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇssᴀɢᴇ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ sᴘᴀᴄᴇs."""
 # Define a global variable to store the cancel state
 is_canceled = False
 cancel_lock = Lock()
 
 @Bot.on_message(filters.command('status') & filters.private & is_owner_or_admin)
 async def info(client: Bot, message: Message):   
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")]])
     
     start_time = time.time()
-    temp_msg = await message.reply("<b>⏳ <i>Processing...</i></b>", quote=True, parse_mode=ParseMode.HTML)
+    temp_msg = await message.reply("<b>⏳ ᴘʀᴏᴄᴇssɪɴɢ...</b>", quote=True, parse_mode=ParseMode.HTML)
     end_time = time.time()
     
     ping_time = (end_time - start_time) * 1000
@@ -279,11 +286,15 @@ async def info(client: Bot, message: Message):
     bottime = get_readable_time(delta.seconds)
     
     await temp_msg.edit(
-        f"<b>📊 <u>BOT STATUS</u></b>\n\n"
-        f"<b>👥 Users:</b> <code>{len(users)}</code>\n"
-        f"<b>⏱️ Uptime:</b> <code>{bottime}</code>\n"
-        f"<b>📶 Ping:</b> <code>{ping_time:.2f} ms</code>\n\n"
-        f"<b>⚡ Powered by @xFlexyy</b>",
+        f"╭━━━━━━━━━━━━━━╮\n"
+        f"┃   ʙᴏᴛ sᴛᴀᴛᴜs   ┃\n"
+        f"╰━━━━━━━━━━━━━━╯\n\n"
+        f"• ᴜsᴇʀs: <code>{len(users)}</code>\n"
+        f"• ᴜᴘᴛɪᴍᴇ: <code>{bottime}</code>\n"
+        f"• ᴘɪɴɢ: <code>{ping_time:.2f} ᴍs</code>\n\n"
+        f"──────────────────\n"
+        f"ᴘᴏᴡᴇʀᴇᴅ ʙʏ @xFlexyy\n"
+        f"──────────────────",
         reply_markup=reply_markup,
         parse_mode=ParseMode.HTML
     )
@@ -295,7 +306,7 @@ async def cancel_broadcast(client: Bot, message: Message):
     global is_canceled
     async with cancel_lock:
         is_canceled = True
-    await message.reply_text("<b>✅ Broadcast cancelled!</b>")
+    await message.reply_text("<b>✅ ʙʀᴏᴀᴅᴄᴀsᴛ ᴄᴀɴᴄᴇʟʟᴇᴅ!</b>")
 
 @Bot.on_message(filters.private & filters.command('broadcast') & is_owner_or_admin)
 async def broadcast(client: Bot, message: Message):
@@ -304,8 +315,8 @@ async def broadcast(client: Bot, message: Message):
 
     if not message.reply_to_message:
         msg = await message.reply(
-            "<b>📢 Reply to a message to broadcast.</b>\n\n"
-            "<b>Usage examples:</b>\n"
+            "<b>📢 ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ʙʀᴏᴀᴅᴄᴀsᴛ.</b>\n\n"
+            "<b>ᴜsᴀɢᴇ ᴇxᴀᴍᴘʟᴇs:</b>\n"
             "<code>/broadcast normal</code>\n"
             "<code>/broadcast pin</code>\n"
             "<code>/broadcast delete 30</code>\n"
@@ -327,24 +338,24 @@ async def broadcast(client: Bot, message: Message):
         arg = args[i].lower()
         if arg == "pin":
             do_pin = True
-            mode_text.append("PIN")
+            mode_text.append("ᴘɪɴ")
         elif arg == "delete":
             do_delete = True
             try:
                 duration = int(args[i + 1])
                 i += 1
             except (IndexError, ValueError):
-                return await message.reply("<b>❌ Provide valid duration for delete mode.</b>\nUsage: `/broadcast delete 30`")
-            mode_text.append(f"DELETE({duration}s)")
+                return await message.reply("<b>❌ ᴘʀᴏᴠɪᴅᴇ ᴠᴀʟɪᴅ ᴅᴜʀᴀᴛɪᴏɴ ғᴏʀ ᴅᴇʟᴇᴛᴇ ᴍᴏᴅᴇ.</b>\nᴜsᴀɢᴇ: <code>/broadcast delete 30</code>")
+            mode_text.append(f"ᴅᴇʟᴇᴛᴇ({duration}s)")
         elif arg == "silent":
             silent = True
-            mode_text.append("SILENT")
+            mode_text.append("sɪʟᴇɴᴛ")
         else:
             mode_text.append(arg.upper())
         i += 1
 
     if not mode_text:
-        mode_text.append("NORMAL")
+        mode_text.append("ɴᴏʀᴍᴀʟ")
 
     # Reset cancel flag
     async with cancel_lock:
@@ -355,7 +366,7 @@ async def broadcast(client: Bot, message: Message):
     total = len(query)
     successful = blocked = deleted = unsuccessful = 0
 
-    pls_wait = await message.reply(f"<b>📢 Broadcasting in <i>{' + '.join(mode_text)}</i> mode...</b>")
+    pls_wait = await message.reply(f"<b>📢 ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ɪɴ <i>{' + '.join(mode_text)}</i> ᴍᴏᴅᴇ...</b>")
 
     bar_length = 20
     progress_bar = ''
@@ -365,7 +376,7 @@ async def broadcast(client: Bot, message: Message):
     for i, chat_id in enumerate(query, start=1):
         async with cancel_lock:
             if is_canceled:
-                await pls_wait.edit(f"<b>❌ BROADCAST ({' + '.join(mode_text)}) CANCELLED</b>")
+                await pls_wait.edit(f"<b>❌ ʙʀᴏᴀᴅᴄᴀsᴛ ({' + '.join(mode_text)}) ᴄᴀɴᴄᴇʟʟᴇᴅ</b>")
                 return
 
         try:
@@ -403,34 +414,36 @@ async def broadcast(client: Bot, message: Message):
         if percent_complete - last_update_percentage >= update_interval or last_update_percentage == 0:
             num_blocks = int(percent_complete * bar_length)
             progress_bar = "█" * num_blocks + "░" * (bar_length - num_blocks)
-            status_update = f"""<b>📢 BROADCAST ({' + '.join(mode_text)})</b>
+            status_update = f"""<b>📢 ʙʀᴏᴀᴅᴄᴀsᴛ ({' + '.join(mode_text)})</b>
 
 <code>[{progress_bar}] {percent_complete:.0%}</code>
 
-<b>📊 Statistics:</b>
-├ Total: <code>{total}</code>
-├ Successful: <code>{successful}</code>
-├ Blocked: <code>{blocked}</code>
-├ Deleted: <code>{deleted}</code>
-└ Failed: <code>{unsuccessful}</code>
+<b>📊 sᴛᴀᴛɪsᴛɪᴄs:</b>
+├ ᴛᴏᴛᴀʟ: <code>{total}</code>
+├ sᴜᴄᴄᴇssғᴜʟ: <code>{successful}</code>
+├ ʙʟᴏᴄᴋᴇᴅ: <code>{blocked}</code>
+├ ᴅᴇʟᴇᴛᴇᴅ: <code>{deleted}</code>
+└ ғᴀɪʟᴇᴅ: <code>{unsuccessful}</code>
 
-<i>➪ To stop: <b>/cancel</b></i>"""
+<i>➪ ᴛᴏ sᴛᴏᴘ: <b>/cancel</b></i>"""
             await pls_wait.edit(status_update)
             last_update_percentage = percent_complete
 
     # Final status
-    final_status = f"""<b>✅ BROADCAST ({' + '.join(mode_text)}) COMPLETED</b>
+    final_status = f"""<b>✅ ʙʀᴏᴀᴅᴄᴀsᴛ ({' + '.join(mode_text)}) ᴄᴏᴍᴘʟᴇᴛᴇᴅ</b>
 
 <code>[{progress_bar}] {percent_complete:.0%}</code>
 
-<b>📊 Final Statistics:</b>
-├ Total: <code>{total}</code>
-├ Successful: <code>{successful}</code>
-├ Blocked: <code>{blocked}</code>
-├ Deleted: <code>{deleted}</code>
-└ Failed: <code>{unsuccessful}</code>
+<b>📊 ғɪɴᴀʟ sᴛᴀᴛɪsᴛɪᴄs:</b>
+├ ᴛᴏᴛᴀʟ: <code>{total}</code>
+├ sᴜᴄᴄᴇssғᴜʟ: <code>{successful}</code>
+├ ʙʟᴏᴄᴋᴇᴅ: <code>{blocked}</code>
+├ ᴅᴇʟᴇᴛᴇᴅ: <code>{deleted}</code>
+└ ғᴀɪʟᴇᴅ: <code>{unsuccessful}</code>
 
-<b>⚡ Powered by @xFlexyy</b>"""
+──────────────────
+ᴘᴏᴡᴇʀᴇᴅ ʙʏ @xFlexyy
+──────────────────"""
     return await pls_wait.edit(final_status)
 
 
@@ -469,21 +482,23 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         about_image = random.choice(START_IMAGES)
         
         ABOUT_TXT = f"""
-<b><blockquote expandable>ℹ️ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ</blockquote>
+╭━━━━━━━━━━━━━━━━━━╮
+┃   ℹ️ ᴀʙᴏᴜᴛ ʙᴏᴛ   ┃
+╰━━━━━━━━━━━━━━━━━━╯
 
-<b>🤖 ʙᴏᴛ ɴᴀᴍᴇ:</b> <a href='https://t.me/YutaShareBot'>Yᴜᴛᴀ Sʜᴀʀᴇ Bᴏᴛ</a>
-<b>👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ:</b> <a href='https://t.me/xFlexyy'>Fʟᴇxʏʏ</a>
-<b>📢 ᴄᴏᴍᴍᴜɴɪᴛʏ:</b> <a href='https://t.me/DragonByte_Network'>DʀᴀɢᴏɴBʏᴛᴇ Nᴇᴛᴡᴏʀᴋ</a>
-<b>📅 ᴄʀᴇᴀᴛᴇᴅ:</b> 2024
+• ʙᴏᴛ ɴᴀᴍᴇ: ʏᴜᴛᴀ sʜᴀʀᴇ ʙᴏᴛ
+• ᴅᴇᴠᴇʟᴏᴘᴇʀ: @xFlexyy
+• ᴄᴏᴍᴍᴜɴɪᴛʏ: @DragonByte_Network
 
-<b>✨ ғᴇᴀᴛᴜʀᴇs:</b>
-• Exᴄʟᴜsɪᴠᴇ Aɴɪᴍᴇ Cʜᴀɴɴᴇʟs
-• Hᴇɴᴛᴀɪ Cᴏɴᴛᴇɴᴛ Aᴄᴄᴇss
-• Fᴀsᴛ & Rᴇʟɪᴀʙʟᴇ Sʜᴀʀɪɴɢ
-• 24/7 Uᴘᴛɪᴍᴇ
+ғᴇᴀᴛᴜʀᴇs:
+» ᴇxᴄʟᴜsɪᴠᴇ ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ
+» ʜᴇɴᴛᴀɪ ᴄᴏɴᴛᴇɴᴛ ᴀᴄᴄᴇss
+» ғᴀsᴛ & ʀᴇʟɪᴀʙʟᴇ sʜᴀʀɪɴɢ
+» 24/7 ᴜᴘᴛɪᴍᴇ
 
-<b>⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @xFlexyy</b>
-</b>"""
+──────────────────
+ᴘᴏᴡᴇʀᴇᴅ ʙʏ @xFlexyy
+──────────────────"""
         
         await query.edit_message_media(
             InputMediaPhoto(
@@ -492,8 +507,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             ),
             reply_markup=InlineKeyboardMarkup([
                 [
-                    InlineKeyboardButton('🔙 Back', callback_data='start'), 
-                    InlineKeyboardButton('❌ Close', callback_data='close')
+                    InlineKeyboardButton('• ʙᴀᴄᴋ •', callback_data='start'), 
+                    InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close')
                 ]
             ]),
         )
@@ -501,13 +516,13 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "channels":
         # Show anime channels directly
         buttons = InlineKeyboardMarkup([
-            [InlineKeyboardButton("📺 Anime Channel", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
-            [InlineKeyboardButton("🌙 Hentai Channel Night Fall", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
-            [InlineKeyboardButton("🔙 Back", callback_data="start")]
+            [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
+            [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
+            [InlineKeyboardButton("• ʙᴀᴄᴋ •", callback_data="start")]
         ])
         
         await query.message.edit_text(
-            "<b>📢 ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ:</b>",
+            "<b>📢 sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ:</b>",
             reply_markup=buttons,
             parse_mode=ParseMode.HTML
         )
@@ -516,32 +531,39 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         # Random image selection
         start_image = random.choice(START_IMAGES)
         
-        # Custom inline buttons with your anime channels
+        # Custom inline buttons with your anime channels - NO EMOJIS
         inline_buttons = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("📺 • Anime Channel • 📺", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
-                [InlineKeyboardButton("🌙 • Hentai Channel Night Fall • 🌙", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
+                [InlineKeyboardButton("• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI1NDcyOTQzMzE")],
+                [InlineKeyboardButton("• ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/YutaShareBot?start=req_LTEwMDI5MDgyNDA3NDI")],
                 [
-                    InlineKeyboardButton("ℹ️ About", callback_data="about"),
-                    InlineKeyboardButton("📢 Channel", url="https://t.me/DragonByte_Network")
+                    InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
+                    InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟ •", url="https://t.me/DragonByte_Network")
                 ],
-                [InlineKeyboardButton("❌ Close", callback_data="close")]
+                [InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")]
             ]
         )
         
-        # Custom start message with your branding
+        # Cool start message with better UI
         START_MSG = f"""
-<b><blockquote expandable>✨ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʏᴜᴛᴀ ꜱʜᴀʀᴇ ʙᴏᴛ ✨</blockquote>
+╭━━━━━━━━━━━━━━━━━━╮
+┃   ✨ ʏᴜᴛᴀ ꜱʜᴀʀᴇ ʙᴏᴛ ✨
+╰━━━━━━━━━━━━━━━━━━╯
 
-ʜᴇʏ <a href='tg://user?id={query.from_user.id}'>{query.from_user.first_name}</a> 👋,
+ʜᴇʏ {query.from_user.first_name},
 
-ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴡɪᴛʜ ᴀᴄᴄᴇꜱꜱ ᴛᴏ ᴇxᴄʟᴜꜱɪᴠᴇ ᴀɴɪᴍᴇ ᴀɴᴅ ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟꜱ.
+ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴀɴɪᴍᴇ sʜᴀʀɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ.
 
-<b>🔰 ᴜꜱᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ:</b>
+» ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇss ᴛᴡᴏ ᴇxᴄʟᴜsɪᴠᴇ ᴄʜᴀɴɴᴇʟs:
+  • ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ
+  • ʜᴇɴᴛᴀɪ ᴄʜᴀɴɴᴇʟ
 
-⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href='https://t.me/xFlexyy'>Fʟᴇxʏʏ</a>
-📢 ᴄᴏᴍᴍᴜɴɪᴛʏ: <a href='https://t.me/DragonByte_Network'>DʀᴀɢᴏɴBʏᴛᴇ Nᴇᴛᴡᴏʀᴋ</a>
-</b>"""
+» ᴜsᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴘʀᴇғᴇʀʀᴇᴅ ᴄʜᴀɴɴᴇʟ.
+
+──────────────────
+ᴘᴏᴡᴇʀᴇᴅ ʙʏ @xFlexyy
+ᴄᴏᴍᴍᴜɴɪᴛʏ @DragonByte_Network
+──────────────────"""
         
         try:
             await query.edit_message_media(
@@ -565,18 +587,18 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         try:
             chat = await client.get_chat(cid)
             mode = await db.get_channel_mode(cid)
-            status = "🟢 ᴏɴ" if mode == "on" else "🔴 ᴏғғ"
-            new_mode = "ᴏғғ" if mode == "on" else "on"
+            status = "ᴏɴ" if mode == "on" else "ᴏғғ"
+            new_mode = "ᴏғғ" if mode == "on" else "ᴏɴ"
             buttons = [
-                [InlineKeyboardButton(f"ʀᴇǫ ᴍᴏᴅᴇ {'OFF' if mode == 'on' else 'ON'}", callback_data=f"rfs_toggle_{cid}_{new_mode}")],
-                [InlineKeyboardButton("‹ ʙᴀᴄᴋ", callback_data="fsub_back")]
+                [InlineKeyboardButton(f"ʀᴇǫ ᴍᴏᴅᴇ: {'ᴏғғ' if mode == 'on' else 'ᴏɴ'}", callback_data=f"rfs_toggle_{cid}_{new_mode}")],
+                [InlineKeyboardButton("• ʙᴀᴄᴋ •", callback_data="fsub_back")]
             ]
             await query.message.edit_text(
-                f"Channel: {chat.title}\nCurrent Force-Sub Mode: {status}",
+                f"ᴄʜᴀɴɴᴇʟ: {chat.title}\nᴄᴜʀʀᴇɴᴛ ғᴏʀᴄᴇ-sᴜʙ ᴍᴏᴅᴇ: {status}",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
         except Exception:
-            await query.answer("Failed to fetch channel info", show_alert=True)
+            await query.answer("ғᴀɪʟᴇᴅ ᴛᴏ ғᴇᴛᴄʜ ᴄʜᴀɴɴᴇʟ ɪɴғᴏ", show_alert=True)
 
     elif data.startswith("rfs_toggle_"):
         cid, action = data.split("_")[2:]
@@ -584,18 +606,18 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         mode = "on" if action == "on" else "off"
 
         await db.set_channel_mode(cid, mode)
-        await query.answer(f"Force-Sub set to {'ON' if mode == 'on' else 'OFF'}")
+        await query.answer(f"ғᴏʀᴄᴇ-sᴜʙ sᴇᴛ ᴛᴏ {'ᴏɴ' if mode == 'on' else 'ᴏғғ'}")
 
         # Refresh the same channel's mode view
         chat = await client.get_chat(cid)
-        status = "🟢 ON" if mode == "on" else "🔴 OFF"
-        new_mode = "off" if mode == "on" else "on"
+        status = "ᴏɴ" if mode == "on" else "ᴏғғ"
+        new_mode = "ᴏғғ" if mode == "on" else "ᴏɴ"
         buttons = [
-            [InlineKeyboardButton(f"ʀᴇǫ ᴍᴏᴅᴇ {'OFF' if mode == 'on' else 'ON'}", callback_data=f"rfs_toggle_{cid}_{new_mode}")],
-            [InlineKeyboardButton("‹ ʙᴀᴄᴋ", callback_data="fsub_back")]
+            [InlineKeyboardButton(f"ʀᴇǫ ᴍᴏᴅᴇ: {'ᴏғғ' if mode == 'on' else 'ᴏɴ'}", callback_data=f"rfs_toggle_{cid}_{new_mode}")],
+            [InlineKeyboardButton("• ʙᴀᴄᴋ •", callback_data="fsub_back")]
         ]
         await query.message.edit_text(
-            f"Channel: {chat.title}\nCurrent Force-Sub Mode: {status}",
+            f"ᴄʜᴀɴɴᴇʟ: {chat.title}\nᴄᴜʀʀᴇɴᴛ ғᴏʀᴄᴇ-sᴜʙ ᴍᴏᴅᴇ: {status}",
             reply_markup=InlineKeyboardMarkup(buttons)
         )
 
